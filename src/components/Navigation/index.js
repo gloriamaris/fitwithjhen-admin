@@ -1,4 +1,4 @@
-import { Box, Button, Grid } from '@mui/material'
+import { Box, Button } from '@mui/material'
 import React, { useState } from 'react'
 
 const buttonStyles = {
@@ -69,31 +69,24 @@ const Navigation = () => {
   }
 
   return (
-    <Grid container spacing={2}>
-      <Grid item xs={3}>
-        <Box mt={5} />
-        {
-          menuLinks.map((item, i) =>
-            <Box key={i} ml={2} mr={2} mt={2} mb={2}>
-              <Button 
-                color='primary'
-                variant={'text'}
-                onClick={() => handleClick(item.value)}
-                sx={activeMenu === item.value ? { ...active } : { ...inactive }}
-                {...buttonProps}
-              >
-                {item.name}
-              </Button>
-
-
-            </Box>
-          )
-        }
-      </Grid>
-      <Grid item xs={9}>
-        10
-      </Grid>
-    </Grid>
+    <>
+      <Box mt={5} />
+      {
+        menuLinks.map((item, i) =>
+          <Box key={i} ml={2} mr={2} mt={2} mb={2}>
+            <Button
+              color='primary'
+              variant={'text'}
+              onClick={() => handleClick(item.value)}
+              sx={activeMenu === item.value ? { ...active } : { ...inactive }}
+              {...buttonProps}
+            >
+              {item.name}
+            </Button>
+          </Box>
+        )
+      }
+    </>
   )
 }
 
