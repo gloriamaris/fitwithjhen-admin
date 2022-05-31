@@ -1,17 +1,14 @@
-import './App.css';
+import './App.css'
 
-import { createTheme, ThemeProvider } from '@mui/material';
-import { Container } from '@mui/system';
-import styles from './styles';
-import Header from './components/Header';
-import AuthenticatedLayout from './layouts/AuthenticatedLayout';
-import { Route, Routes } from 'react-router-dom';
-import Users from './pages/Users';
-import Notifications from './pages/Notifications';
-import GuidedProgram from './pages/GuidedProgram';
-import Habits from './pages/Habits';
+import { createTheme, ThemeProvider } from '@mui/material'
+import styles from './styles'
+import { Route, Routes } from 'react-router-dom'
+import Users from './pages/Users'
+import Notifications from './pages/Notifications'
+import GuidedProgram from './pages/GuidedProgram'
+import Habits from './pages/Habits'
 
-const theme = createTheme(styles);
+const theme = createTheme(styles)
 
 const routes = [
   {
@@ -37,7 +34,7 @@ const routes = [
   {
     path: 'users',
     element: <Users />
-  },
+  }
 ]
 
 const App = props => {
@@ -49,7 +46,7 @@ const App = props => {
         </Routes>
       </div>
     </ThemeProvider>
-  );
+  )
 }
 
-export default App;
+export default App

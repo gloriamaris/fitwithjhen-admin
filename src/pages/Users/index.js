@@ -1,6 +1,6 @@
 import React from 'react'
-import { Box, Button, Grid, Link, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
-import AuthenticatedLayout from '../../layouts/AuthenticatedLayout';
+import { Box, Button, Grid, Link, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material'
+import AuthenticatedLayout from '../../layouts/AuthenticatedLayout'
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 70 },
@@ -9,8 +9,8 @@ const columns = [
   { field: 'workout_program', headerName: 'Workout Program', width: 250 },
   { field: 'duration', headerName: 'Duration', width: 270 },
   { field: 'active', headerName: 'Active', width: 130 },
-  { field: 'actions', headerName: 'Actions', width: 130 },
-];
+  { field: 'actions', headerName: 'Actions', width: 130 }
+]
 
 const rows = [
   {
@@ -52,8 +52,8 @@ const rows = [
     workout_program: 'https://www.notion.so/EJ-s-Guided-Program-fc9aa124e2c04348b99987ae66bf892b',
     duration: 'May 1, 2022 to June 5, 2022',
     active: 'Yes'
-  },
-];
+  }
+]
 
 const Users = () => {
   console.log('users here')
@@ -65,20 +65,22 @@ const Users = () => {
           <Typography
             variant='h4'
             align='left'
-            gutterBottom>
+            gutterBottom
+          >
             Users
           </Typography>
         </Grid>
         <Grid item xs={2}>
           <Button
             size='large'
-            variant="contained"
+            variant='contained'
             color='info'
             sx={{
               textTransform: 'none'
             }}
             disableElevation
-            fullWidth>
+            fullWidth
+          >
             Add new user
           </Button>
         </Grid>
@@ -86,14 +88,15 @@ const Users = () => {
 
       <div style={{ width: '91.5%' }}>
         <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 300 }} aria-label="simple table">
+          <Table sx={{ minWidth: 300 }} aria-label='simple table'>
             <TableHead>
               <TableRow>
                 {
-                  columns.map(item => 
+                  columns.map(item =>
                     <TableCell
                       key={item.field}
-                      align="left">
+                      align='left'
+                    >
                       {item.headerName}
                     </TableCell>
                   )
@@ -106,10 +109,10 @@ const Users = () => {
                   key={i}
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
-                  <TableCell align="left">{row.id}</TableCell>
-                  <TableCell align="left">{row.username}</TableCell>
-                  <TableCell align="left">{row.gender}</TableCell>
-                  <TableCell align="left">
+                  <TableCell align='left'>{row.id}</TableCell>
+                  <TableCell align='left'>{row.username}</TableCell>
+                  <TableCell align='left'>{row.gender}</TableCell>
+                  <TableCell align='left'>
                     <Link
                       style={{
                         color: '#0842A0',
@@ -117,11 +120,12 @@ const Users = () => {
                         fontWeight: '500'
                       }}
                       href={`${row.workout_program}`}
-                    >Guided Program</Link>
+                    >Guided Program
+                    </Link>
                   </TableCell>
-                  <TableCell align="left">{row.duration}</TableCell>
-                  <TableCell align="left">{row.active}</TableCell>
-                  <TableCell align="left" colSpan={2}>
+                  <TableCell align='left'>{row.duration}</TableCell>
+                  <TableCell align='left'>{row.active}</TableCell>
+                  <TableCell align='left' colSpan={2}>
                     <Link
                       style={{
                         color: '#0842A0',
@@ -129,12 +133,12 @@ const Users = () => {
                         marginRight: '1rem'
                       }}
                       href={`${row.workout_program}`}
-                      >
+                    >
                       Edit
                     </Link>
                     <Link
                       style={{
-                        color: '#A2254C',
+                        color: '#A2254C'
                       }}
                       href={`${row.workout_program}`}
                     >
@@ -149,7 +153,6 @@ const Users = () => {
       </div>
     </AuthenticatedLayout>
   )
-
 }
 
 export default Users

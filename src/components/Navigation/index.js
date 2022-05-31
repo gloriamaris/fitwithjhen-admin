@@ -63,7 +63,7 @@ const Navigation = () => {
       name: 'Articles',
       value: 'articles',
       isActive: true
-    },
+    }
   ]
 
   const handleClick = value => {
@@ -78,7 +78,7 @@ const Navigation = () => {
           <Box key={i} ml={2} mr={2} mt={2} mb={2}>
             <Button
               color='primary'
-              variant={'text'}
+              variant='text'
               onClick={() => handleClick(item.value)}
               sx={activeMenu === item.value ? { ...active } : { ...inactive }}
               {...buttonProps}

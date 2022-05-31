@@ -3,10 +3,8 @@ import { Container } from '@mui/system'
 import React from 'react'
 import Header from '../components/Header'
 import Navigation from '../components/Navigation'
-import Users from '../pages/Users'
 
 const AuthenticatedLayout = props => {
-
   console.log('auth layour')
   return (
     <>
