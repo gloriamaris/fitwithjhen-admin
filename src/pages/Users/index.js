@@ -1,5 +1,6 @@
 import React from 'react'
 import { Box, Button, Grid, Link, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
+import AuthenticatedLayout from '../../layouts/AuthenticatedLayout';
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 70 },
@@ -55,14 +56,15 @@ const rows = [
 ];
 
 const Users = () => {
-
+  console.log('users here')
   return (
-    <>
+    <AuthenticatedLayout>
       <Box mt={5} />
       <Grid container spacing={2}>
         <Grid item xs={9}>
           <Typography
             variant='h4'
+            align='left'
             gutterBottom>
             Users
           </Typography>
@@ -99,9 +101,9 @@ const Users = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.map((row) => (
+              {rows.map((row, i) => (
                 <TableRow
-                  key={row.name}
+                  key={i}
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
                   <TableCell align="left">{row.id}</TableCell>
@@ -145,7 +147,7 @@ const Users = () => {
           </Table>
         </TableContainer>
       </div>
-    </>
+    </AuthenticatedLayout>
   )
 
 }

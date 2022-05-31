@@ -43,7 +43,7 @@ const Navigation = () => {
     {
       id: 2,
       name: 'Guided Program',
-      value: 'guided_program',
+      value: 'guided-program',
       isActive: true
     },
     {
