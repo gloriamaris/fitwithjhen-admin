@@ -1,22 +1,5 @@
-import { Box, Button, Grid, styled } from '@mui/material'
-import React, { useState, useEffect } from 'react'
-
-const ActiveButton = styled(Button)({
-  paddingTop: '0.75rem',
-  paddingBottom: '0.75rem',
-  textTransform: 'none',
-  fontSize: '1.25rem',
-  backgroundColor: '#E2ACA6'
-})
-
-const InactiveButton = styled(Button)({
-  paddingTop: '0.75rem',
-  paddingBottom: '0.75rem',
-  textTransform: 'none',
-  color: '#362F2E',
-  fontSize: '1.25rem'
-})
-
+import { Box, Button, Grid } from '@mui/material'
+import React, { useState } from 'react'
 
 const buttonStyles = {
   active: {
@@ -25,6 +8,7 @@ const buttonStyles = {
     textTransform: 'none',
     fontSize: '1.25rem',
     backgroundColor: '#E2ACA6',
+    fontWeight: 500,
     color: '#362F2E',
   },
   inactive: {
@@ -32,6 +16,7 @@ const buttonStyles = {
     paddingBottom: '0.75rem',
     textTransform: 'none',
     color: '#362F2E',
+    fontWeight: 500,
     fontSize: '1.25rem'
   }
 }
