@@ -7,6 +7,7 @@ import Users from './pages/Users'
 import Notifications from './pages/Notifications'
 import GuidedProgram from './pages/GuidedProgram'
 import Habits from './pages/Habits'
+import Articles from './pages/Articles'
 
 const theme = createTheme(styles)
 
@@ -34,6 +35,10 @@ const routes = [
   {
     path: 'users',
     element: <Users />
+  },
+  {
+    path: 'articles',
+    element: <Articles />
   }
 ]
 

@@ -5,7 +5,6 @@ import Header from '../components/Header'
 import Navigation from '../components/Navigation'
 
 const AuthenticatedLayout = props => {
-  console.log('auth layour')
   return (
     <>
       <Container

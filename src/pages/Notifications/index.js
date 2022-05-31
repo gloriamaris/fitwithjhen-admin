@@ -1,8 +1,11 @@
 import React from 'react'
+import AuthenticatedLayout from '../../layouts/AuthenticatedLayout'
 
 const Notifications = () => {
   return (
-    <>Notifications</>
+    <AuthenticatedLayout>
+      <>Notifications</>
+    </AuthenticatedLayout>
   )
 }
 

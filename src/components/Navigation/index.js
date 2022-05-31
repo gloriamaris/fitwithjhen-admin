@@ -1,5 +1,6 @@
 import { Box, Button } from '@mui/material'
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const buttonStyles = {
   active: {
@@ -23,9 +24,11 @@ const buttonStyles = {
   }
 }
 
-const Navigation = () => {
+const Navigation = props => {
   const [activeMenu, setActiveMenu] = useState('users')
   const { active, inactive } = buttonStyles
+  const navigate = useNavigate()
+
   const buttonProps = {
     disableFocusRipple: true,
     disableRipple: true,
@@ -65,8 +68,9 @@ const Navigation = () => {
       isActive: true
     }
   ]
-
+  console.log({ props })
   const handleClick = value => {
+    navigate('/' + value)
     setActiveMenu(value)
   }
 

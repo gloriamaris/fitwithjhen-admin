@@ -1,8 +1,11 @@
 import React from 'react'
+import AuthenticatedLayout from '../../layouts/AuthenticatedLayout'
 
 const Articles = () => {
   return (
-    <>Articles</>
+    <AuthenticatedLayout>
+      <>Articles</>
+    </AuthenticatedLayout>
   )
 }
 
