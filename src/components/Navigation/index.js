@@ -10,6 +10,7 @@ const buttonStyles = {
     backgroundColor: '#E2ACA6',
     fontWeight: 500,
     color: '#362F2E',
+    justifyContent: 'flex-start'
   },
   inactive: {
     paddingTop: '0.75rem',
@@ -17,7 +18,8 @@ const buttonStyles = {
     textTransform: 'none',
     color: '#362F2E',
     fontWeight: 500,
-    fontSize: '1.25rem'
+    fontSize: '1.25rem',
+    justifyContent: 'flex-start'
   }
 }
 

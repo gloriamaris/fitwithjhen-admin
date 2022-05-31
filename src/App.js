@@ -17,9 +17,7 @@ const App = props => {
       >
         <Header />
       </Container>
-      <AuthenticatedLayout>
-        {props.children}
-      </AuthenticatedLayout>
+      <AuthenticatedLayout />
     </ThemeProvider>
   );
 }

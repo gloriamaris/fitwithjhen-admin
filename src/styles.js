@@ -1,4 +1,19 @@
 const styles = {
+  typography: {
+    fontFamily: [
+      'Poppins',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+  },
   status: {
     danger: '#e53e3e',
   },
@@ -8,6 +23,11 @@ const styles = {
       darker: '#E2ACA6',
       dark: '#E2ACA6',
       contrastText: '#362F2E',
+    },
+    info: {
+      main: '#CDF8FD',
+      dark: '#93ECF7',
+      contrastText: '#212B2C',
     },
     neutral: {
       main: '#E2ACA6',
