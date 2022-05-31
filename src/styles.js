@@ -10,7 +10,7 @@ const styles = {
       contrastText: '#362F2E',
     },
     neutral: {
-      main: '#FAF2F1',
+      main: '#E2ACA6',
       contrastText: '#fff',
     },
     secondary: {
