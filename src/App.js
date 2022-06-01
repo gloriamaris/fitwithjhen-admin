@@ -8,6 +8,7 @@ import Notifications from './pages/Notifications'
 import GuidedProgram from './pages/GuidedProgram'
 import Habits from './pages/Habits'
 import Articles from './pages/Articles'
+import CreateProgram from './pages/CreateProgram'
 
 const theme = createTheme(styles)
 
@@ -39,7 +40,11 @@ const routes = [
   {
     path: 'articles',
     element: <Articles />
-  }
+  },
+  {
+    path: 'guided-program/create',
+    element: <CreateProgram />
+  },
 ]
 
 const App = props => {

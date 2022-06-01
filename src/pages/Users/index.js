@@ -56,11 +56,10 @@ const rows = [
 ]
 
 const Users = () => {
-  console.log('users here')
   return (
     <AuthenticatedLayout>
       <Box mt={5} />
-      <Grid container spacing={2}>
+      <Grid container spacing={2}> 
         <Grid item xs={9}>
           <Typography
             variant='h4'

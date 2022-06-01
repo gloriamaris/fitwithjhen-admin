@@ -13,7 +13,7 @@ const AuthenticatedLayout = props => {
       >
         <Header />
       </Container>
-      <Grid container spacing={2}>
+      <Grid container spacing={9}>
         <Grid item xs={3}>
           <Navigation />
         </Grid>
