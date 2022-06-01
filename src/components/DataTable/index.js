@@ -11,13 +11,13 @@ const PageButton = styled(Button)({
 const DataTable = props => {
 
   const buttons = [
-    <PageButton variant='text' key="one" disabled>Prev</PageButton>,
-    <PageButton variant='text' key="two">1</PageButton>,
+    <PageButton variant='text' key="prev" disabled>Prev</PageButton>,
+    <PageButton variant='text' key="one">1</PageButton>,
     <PageButton variant='text' key="two">2</PageButton>,
-    <PageButton variant='text' key="two">3</PageButton>,
-    <PageButton variant='text' key="two">4</PageButton>,
-    <PageButton variant='text' key="two">5</PageButton>,
-    <PageButton variant='text' key="three">Next</PageButton>,
+    <PageButton variant='text' key="three">3</PageButton>,
+    <PageButton variant='text' key="four">4</PageButton>,
+    <PageButton variant='text' key="five">5</PageButton>,
+    <PageButton variant='text' key="next">Next</PageButton>,
   ];
 
   const Pagination = () => (
