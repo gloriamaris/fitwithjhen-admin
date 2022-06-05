@@ -9,6 +9,7 @@ import GuidedProgram from './pages/GuidedProgram'
 import Habits from './pages/Habits'
 import Articles from './pages/Articles'
 import CreateProgram from './pages/CreateProgram'
+import Login from './pages/Login'
 
 const theme = createTheme(styles)
 
@@ -16,6 +17,10 @@ const routes = [
   {
     path: '/',
     element: <Users />
+  },
+  {
+    path: '/login',
+    element: <Login />
   },
   {
     path: 'notifications',

@@ -18,6 +18,12 @@ const styles = {
     danger: '#e53e3e'
   },
   palette: {
+    default: {
+      main: '#000',
+      darker: '#E2ACA6',
+      dark: '#E2ACA6',
+      contrastText: '#362F2E'
+    },
     primary: {
       main: '#F0DEDC',
       darker: '#E2ACA6',
