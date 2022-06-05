@@ -1,13 +1,19 @@
 import {
   Button,
   FormControl,
+  FormGroup,
+  FormControlLabel,
+  Checkbox,
   Grid,
   InputLabel,
   MenuItem,
   OutlinedInput,
   TextField,
-  Typography
+  Typography,
+  Stack,
+  Select
 } from '@mui/material'
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { Box } from '@mui/system'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
@@ -19,6 +25,7 @@ import PrimaryButton from '../../components/PrimaryButton'
 const CreateProgram = () => {
   const [expanded, setExpanded] = useState('panel1')
   const [frequency, setCurrency] = useState(3)
+  const [autoSaveDisplay, setAutoSaveDisplay] = useState('none')
 
   const currencies = [
     {
@@ -43,14 +50,19 @@ const CreateProgram = () => {
     setCurrency(event.target.value)
   }
 
-  const handleChange = panel => (event, newExpanded) => {
-    setExpanded(newExpanded ? panel : false)
+  const handleChange = e => {
+    setExpanded('' ? '' : false)
   }
+
+  const inputChange = e => {
+    setTimeout(() => setAutoSaveDisplay('flex'),2000)
+  }
+
 
   return (
     <AuthenticatedLayout>
-      <Box mt={5} />
-      <Grid container>
+      <Grid container spacing={2}>
+        {/*Sub Header*/}
         <Grid item xs={12}>
           <Typography textAlign='left' variant='body2'>
             <Link
@@ -60,12 +72,14 @@ const CreateProgram = () => {
               &#8592; Go Back
             </Link>
           </Typography>
-          <Typography variant='h4' align='left' gutterBottom>
+          <Typography variant='h4' align='left'>
             Create Program
           </Typography>
         </Grid>
+        {/*Content*/}
         <Grid item xs={7}>
-          <div style={{ width: '98%' }}>
+          {/*Create Program Form*/}
+          <Box mb={3}>
             <Panel expanded={true} collapsible='true' title='Program Details'>
               <Box sx={{ display: 'flex', flexWrap: 'wrap', width: '50%' }}>
                 <FormControl sx={{ m: 1 }} fullWidth>
@@ -150,50 +164,60 @@ const CreateProgram = () => {
                 </Button>
               </Box>
             </Panel>
-          </div>
-          <Box mt={3} />
-          <div style={{ width: '98%' }}>
+          </Box>
+          {/*Weeks*/}
+          <Box>
+            <Stack direction="row" alignItems="center" justifyContent="space-between" mb={1}>
+              <Typography variant="h5" component="div">
+                Week 1
+              </Typography>
+              <Stack direction="row" spacing={1} alignItems="center" display={autoSaveDisplay}>
+                <CheckCircleIcon color="success"></CheckCircleIcon>
+                <Typography variant="caption" display="block" color="green">
+                  Autosaved!
+                </Typography>
+              </Stack>
+            </Stack>
             <Panel
               expanded={expanded === 'panel1'}
               onChange={handleChange('panel1')}
               title='Day 1'
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-              eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-              eget.
+              <Stack spacing={2}>
+                <FormControl fullWidth>
+                  <InputLabel id="demo-simple-select-label">Training Type</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    label="Training Type"
+                    onChange={handleChange}
+                  >
+                    <MenuItem value={10}>High Intensity Interval Training (HIIT)</MenuItem>
+                  </Select>
+                </FormControl>
+                <FormControl fullWidth>
+                  <InputLabel id="demo-simple-select-label">Muscle Group</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    label="Muscle Group"
+                    onChange={handleChange}
+                  >
+                    <MenuItem value={10}>Lower Body Technique</MenuItem>
+                  </Select>
+                </FormControl>
+                <TextField id="standard-basic" label="Video URL" variant="outlined" onInput={inputChange}/>
+              </Stack>
             </Panel>
-            <Panel
-              title='Day 2'
-              expanded={expanded === 'panel2'}
-              onChange={handleChange('panel2')}
-            >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-              eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-              eget.
-            </Panel>
-            <Panel
-              title='Day 3'
-              expanded={expanded === 'panel3'}
-              onChange={handleChange('panel3')}
-            >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-              eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-              eget.
-            </Panel>
-          </div>
+          </Box>
         </Grid>
-        <Grid item xs={4}>
+        {/*Side Right*/}
+        <Grid item xs>
           <Panel title='Selected Habits' expanded={true} collapsible='true'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-            lacus ex, sit amet blandit leo lobortis eget.
+            <FormGroup>
+              <FormControlLabel control={<Checkbox defaultChecked />} label="Complete workout session" />
+              <FormControlLabel disabled control={<Checkbox />} label="10 mins stretching on off-days" />
+            </FormGroup>
           </Panel>
         </Grid>
       </Grid>
