@@ -1,17 +1,19 @@
-import { Box, Button } from '@mui/material'
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Stack } from '@mui/material'
+import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const buttonStyles = {
   active: {
+    backgroundColor: '#E2ACA6',
     paddingTop: '0.75rem',
     paddingBottom: '0.75rem',
     textTransform: 'none',
-    fontSize: '1.25rem',
-    backgroundColor: '#E2ACA6',
-    fontWeight: 500,
     color: '#362F2E',
-    justifyContent: 'flex-start'
+    fontWeight: 500,
+    fontSize: '1.25rem',
+    textDecoration: 'none',
+    paddingLeft: '0.75rem',
+    borderRadius: '.5rem'
   },
   inactive: {
     paddingTop: '0.75rem',
@@ -20,79 +22,54 @@ const buttonStyles = {
     color: '#362F2E',
     fontWeight: 500,
     fontSize: '1.25rem',
-    justifyContent: 'flex-start'
+    textDecoration: 'none',
+    paddingLeft: '0.75rem'
   }
 }
 
 const Navigation = props => {
-  const [activeMenu, setActiveMenu] = useState('users')
   const { active, inactive } = buttonStyles
-  const navigate = useNavigate()
 
-  const buttonProps = {
-    disableFocusRipple: true,
-    disableRipple: true,
-    disableElevation: true,
-    fullWidth: true,
-    size: 'large'
-  }
   const menuLinks = [
     {
-      id: 1,
       name: 'Users',
-      value: 'users',
-      isActive: true
+      value: 'users'
     },
     {
-      id: 2,
       name: 'Guided Program',
-      value: 'guided-program',
-      isActive: true
+      value: 'guided-program'
     },
     {
-      id: 3,
       name: 'Notifications',
-      value: 'notifications',
-      isActive: true
+      value: 'notifications'
     },
     {
-      id: 4,
       name: 'Habits',
       value: 'habits',
-      isActive: true
     },
     {
-      id: 5,
       name: 'Articles',
       value: 'articles',
-      isActive: true
     }
   ]
-  console.log({ props })
-  const handleClick = value => {
-    navigate('/' + value)
-    setActiveMenu(value)
-  }
 
   return (
-    <>
-      <Box mt={5} />
+    <Stack>
       {
         menuLinks.map((item, i) =>
-          <Box key={i} ml={2} mr={2} mt={2} mb={2}>
-            <Button
-              color='primary'
-              variant='text'
-              onClick={() => handleClick(item.value)}
-              sx={activeMenu === item.value ? { ...active } : { ...inactive }}
-              {...buttonProps}
-            >
-              {item.name}
-            </Button>
-          </Box>
+          <NavLink
+            to={`/${item.value}`}
+            style={({ isActive }) =>
+              isActive ? active : inactive
+            }
+            key={i}
+            exact
+          >
+            {item.name}
+          </NavLink>
         )
       }
-    </>
+    </Stack>
   )
 }
 
