@@ -1,5 +1,6 @@
 import React from 'react'
-import { Box, Button, Grid, Link, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material'
+import { Button, Grid, Link, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography, TextField,Stack,InputAdornment,MenuItem } from '@mui/material'
+import SearchIcon from '@mui/icons-material/Search';
 import AuthenticatedLayout from '../../layouts/AuthenticatedLayout'
 
 const columns = [
@@ -58,9 +59,8 @@ const rows = [
 const Users = () => {
   return (
     <AuthenticatedLayout>
-      <Box mt={5} />
-      <Grid container spacing={2}> 
-        <Grid item xs={9}>
+      <Grid container spacing={2} justifyContent={'space-between'}>
+        <Grid item>
           <Typography
             variant='h4'
             align='left'
@@ -69,7 +69,7 @@ const Users = () => {
             Users
           </Typography>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item>
           <Button
             size='large'
             variant='contained'
@@ -84,10 +84,41 @@ const Users = () => {
           </Button>
         </Grid>
       </Grid>
-
-      <div style={{ width: '91.5%' }}>
+      <div>
+        <Stack direction="row" spacing={1} mb={2}>
+          <TextField
+            placeholder='Search user'
+            id="outlined-start-adornment"
+            InputProps={{
+              startAdornment: <InputAdornment position="start"><SearchIcon/></InputAdornment>,
+            }}
+            size={'small'}
+          />
+          <TextField
+            id="outlined-select-currency"
+            select
+            label="Filter by"
+            size={'small'}
+            sx={{width:'10%'}}
+          >
+            <MenuItem>
+              Username
+            </MenuItem>
+          </TextField>
+          <TextField
+            id="outlined-select-currency"
+            select
+            label="Sort by"
+            size={'small'}
+            sx={{width:'10%'}}
+          >
+            <MenuItem>
+              Username
+            </MenuItem>
+          </TextField>
+        </Stack>
         <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 300 }} aria-label='simple table'>
+          <Table aria-label='simple table'>
             <TableHead>
               <TableRow>
                 {

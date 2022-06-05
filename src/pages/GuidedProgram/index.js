@@ -1,21 +1,21 @@
 import {
-  Box,
   Button,
-  Grid,
-  Link,
-  Paper,
+  Grid, InputAdornment,
+  Link, MenuItem,
+  Paper, Stack,
   Table,
   TableBody,
   TableCell,
   TableContainer,
   TableHead,
-  TableRow,
+  TableRow, TextField,
   Typography
 } from '@mui/material'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import DataTable from '../../components/DataTable'
 import AuthenticatedLayout from '../../layouts/AuthenticatedLayout'
+import SearchIcon from '@mui/icons-material/Search'
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 70 },
@@ -80,14 +80,13 @@ const GuidedProgram = () => {
 
   return (
     <AuthenticatedLayout>
-      <Box mt={5} />
-      <Grid container spacing={2}>
-        <Grid item xs={9}>
+      <Grid container spacing={2} justifyContent={'space-between'}>
+        <Grid item>
           <Typography variant='h4' align='left' gutterBottom>
             Guided Program
           </Typography>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item>
           <Button
             size='large'
             variant='contained'
@@ -103,10 +102,41 @@ const GuidedProgram = () => {
           </Button>
         </Grid>
       </Grid>
-
-      <DataTable width={'91.5%'} hasPagination>
+      <div>
+        <Stack direction="row" spacing={1} mb={2}>
+          <TextField
+            placeholder='Search program'
+            id="outlined-start-adornment"
+            InputProps={{
+              startAdornment: <InputAdornment position="start"><SearchIcon/></InputAdornment>,
+            }}
+            size={'small'}
+          />
+          <TextField
+            id="outlined-select-currency"
+            select
+            label="Filter by"
+            size={'small'}
+            sx={{width:'10%'}}
+          >
+            <MenuItem>
+              Username
+            </MenuItem>
+          </TextField>
+          <TextField
+            id="outlined-select-currency"
+            select
+            label="Sort by"
+            size={'small'}
+            sx={{width:'10%'}}
+          >
+            <MenuItem>
+              Username
+            </MenuItem>
+          </TextField>
+        </Stack>
         <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 300 }} aria-label='simple table'>
+          <Table aria-label='simple table'>
             <TableHead
               sx={{
                 backgroundColor: '#F6F8FC'
@@ -168,7 +198,10 @@ const GuidedProgram = () => {
             </TableBody>
           </Table>
         </TableContainer>
-      </DataTable>
+      </div>
+      {/*<DataTable hasPagination>*/}
+      {/*  */}
+      {/*</DataTable>*/}
     </AuthenticatedLayout>
   )
 }
