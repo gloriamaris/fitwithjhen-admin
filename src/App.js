@@ -10,6 +10,7 @@ import Habits from './pages/Habits'
 import Articles from './pages/Articles'
 import CreateProgram from './pages/CreateProgram'
 import Login from './pages/Login'
+import CreateUser from './pages/CreateUser'
 
 const theme = createTheme(styles)
 
@@ -49,6 +50,10 @@ const routes = [
   {
     path: 'guided-program/create',
     element: <CreateProgram />
+  },
+  {
+    path: 'users/create',
+    element: <CreateUser />
   },
 ]
 

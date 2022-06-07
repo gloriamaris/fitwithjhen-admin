@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Grid, Link, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography, TextField,Stack,InputAdornment,MenuItem } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
 import AuthenticatedLayout from '../../layouts/AuthenticatedLayout'
+import { useNavigate } from 'react-router-dom';
 
 const columns = [
   { field: 'id', headerName: 'ID', width: 70 },
@@ -57,6 +58,8 @@ const rows = [
 ]
 
 const Users = () => {
+  const navigate = useNavigate()
+  
   return (
     <AuthenticatedLayout>
       <Grid container spacing={2} justifyContent={'space-between'}>
@@ -77,6 +80,7 @@ const Users = () => {
             sx={{
               textTransform: 'none'
             }}
+            onClick={() => navigate('/users/create')}
             disableElevation
             fullWidth
           >
