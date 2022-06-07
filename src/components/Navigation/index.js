@@ -63,7 +63,7 @@ const Navigation = props => {
               isActive ? active : inactive
             }
             key={i}
-            exact
+            exact='true'
           >
             {item.name}
           </NavLink>

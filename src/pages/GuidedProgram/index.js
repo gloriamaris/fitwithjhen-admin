@@ -13,7 +13,6 @@ import {
 } from '@mui/material'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import DataTable from '../../components/DataTable'
 import AuthenticatedLayout from '../../layouts/AuthenticatedLayout'
 import SearchIcon from '@mui/icons-material/Search'
 
