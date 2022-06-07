@@ -52,7 +52,7 @@ const CreateProgram = () => {
 
   useEffect(() => {
     if (autoSaveDisplay === 'flex') {
-      setTimeout(() => setAutoSaveDisplay('none'), 1000)
+      setTimeout(() => setAutoSaveDisplay('none'), 3000)
     }
   }, [autoSaveDisplay])
 

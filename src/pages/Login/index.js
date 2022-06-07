@@ -1,8 +1,11 @@
 import React from 'react'
 import { Grid, TextField, Button, Stack, Typography,AppBar,Toolbar } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 // eslint-disable-next-line
 
 const Login = () => {
+  const navigate = useNavigate()
+
   return (
       <Grid
         container
@@ -25,7 +28,7 @@ const Login = () => {
             </Typography>
             <TextField id="outlined-basic" label="Username" variant="outlined"/>
             <TextField id="outlined-basic" label="Password" variant="outlined"/>
-            <Button variant="contained" size={"large"}>Login</Button>
+            <Button variant="contained" size={"large"} onClick={() => navigate('/')}>Login</Button>
           </Stack>
         </Grid>
       </Grid>
